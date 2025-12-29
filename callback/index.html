@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tesla OAuth Callback</title></head>
+<body>
+<h1>Tesla Authorization Complete</h1>
+<p id="msg">Processing...</p>
+<pre id="code" style="background:#f0f0f0;padding:20px;font-size:18px;"></pre>
+<script>
+const params = new URLSearchParams(window.location.search);
+const code = params.get('code');
+if (code) {
+  document.getElementById('msg').textContent = 'Your authorization code:';
+  document.getElementById('code').textContent = code;
+} else {
+  document.getElementById('msg').textContent = 'No code found in URL';
+}
+</script>
+</body>
+</html>
