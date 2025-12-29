@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tesla OAuth Callback</title></head>
+<body>
+<h1>Tesla Authorization Complete</h1>
+<p>Copy the code from the URL bar above.</p>
+<script>
+const params = new URLSearchParams(window.location.search);
+const code = params.get('code');
+if (code) {
+  document.body.innerHTML = '<h1>Success!</h1><p>Your code is:</p><pre>' + code + '</pre><p>Copy this and give it to Kagami.</p>';
+}
+</script>
+</body>
+</html>
